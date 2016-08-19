@@ -1,3 +1,4 @@
+'use strict';
 const angular = {
   _module: {},
   _parseArgs (fn) {
@@ -32,7 +33,7 @@ angular
     return { name: "Lei" }
   })
   .service("$location", function($http){
-    return { name: $http.name }
+    this.name = $http.name
   })
   .controller(($location, $http) => {
     console.log($location, $http);
