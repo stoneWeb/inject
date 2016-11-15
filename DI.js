@@ -8,9 +8,7 @@ const angular = {
     }
     return args[1]
             .split(",")
-            .map(item => {
-              return this._module[item.trim()]
-            })
+            .map(item => this._module[item.trim()])
   },
   factory (key, fn) {
     this._module[key] = fn.apply(null, this._parseArgs(fn))
